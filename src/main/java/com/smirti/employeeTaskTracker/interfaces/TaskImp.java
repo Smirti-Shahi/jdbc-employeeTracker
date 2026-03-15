@@ -80,4 +80,44 @@ public class TaskImp implements TaskInterface  {
         }
 
     }
+
+    @Override
+    public boolean updateTaskStatus(int id, String status) {
+        if(this.connectionError){
+            return false;
+        }
+
+        try(PreparedStatement ps = this.connection.prepareStatement(
+                "UPDATE task set status =? where id =?")){
+            ps.setString(1,status);
+            ps.setInt(2,id);
+            return ps.executeUpdate()>0;
+
+        } catch (Exception e) {
+            System.out.println("Error: "+ e.getMessage());
+            return false;
+
+        }
+
+
+    }
+
+    @Override
+    public boolean deleteTask(int id) {
+        if(this.connectionError){
+            return false;
+        }
+        try(PreparedStatement ps = this.connection.prepareStatement(
+                "DELETE FROM task WHERE  id=?")){
+            ps.setInt(1,id);
+            return ps.executeUpdate()>0;
+
+
+        } catch (Exception e) {
+            System.out.println("error "+e.getMessage());
+            return false;
+
+
+        }
+    }
 }

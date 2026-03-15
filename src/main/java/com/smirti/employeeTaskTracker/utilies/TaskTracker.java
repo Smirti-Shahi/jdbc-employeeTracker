@@ -62,8 +62,16 @@ public class TaskTracker {
                     }
 
                 case "4":
+                    System.out.println("Enter emplooyee id: ");
+                    int employeeId = sc.nextInt();
                     System.out.println("Enter task name: ");
-                    String tasks = sc.nextLine();
+                    String taskName = sc.nextLine();
+                    System.out.println("Enter status: ");
+                    String status = sc.nextLine();
+                    System.out.println(task.assignTask(new Task(0,employeeId,taskName,status)));
+                    break;
+
+
             }
 
 

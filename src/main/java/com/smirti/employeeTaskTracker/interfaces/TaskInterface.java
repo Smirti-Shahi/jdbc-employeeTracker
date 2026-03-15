@@ -9,4 +9,7 @@ public interface TaskInterface {
 
     public ArrayList<Task> getAllTracker();
     public boolean assignTask(Task task);
+    public boolean updateTaskStatus(int id, String status);
+    public boolean deleteTask(int id);
+
 }
