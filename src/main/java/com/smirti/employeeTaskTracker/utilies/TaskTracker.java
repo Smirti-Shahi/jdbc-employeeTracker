@@ -71,6 +71,14 @@ public class TaskTracker {
                     System.out.println(task.assignTask(new Task(0,employeeId,taskName,status)));
                     break;
 
+                case "5":
+                    System.out.println("Goodbye !");
+                    return;
+
+                default:
+                    System.out.println("Invalid choices");
+
+
 
             }
 
