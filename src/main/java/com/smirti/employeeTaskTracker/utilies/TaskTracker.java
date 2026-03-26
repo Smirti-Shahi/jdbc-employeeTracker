@@ -71,7 +71,20 @@ public class TaskTracker {
                     System.out.println(task.assignTask(new Task(0,employeeId,taskName,status)));
                     break;
 
+//                public boolean updateTaskStatus(int id, String status);
+//                public boolean deleteTask(int id);
+
                 case "5":
+                    System.out.println("update task status by id: ");
+                    int updateId = Integer.parseInt(sc.nextLine().trim());
+                    System.out.println("New Status");
+                    String sta = sc.nextLine();
+                    System.out.println(task.updateTaskStatus(updateId,sta));
+                    break;
+
+
+
+                case "6":
                     System.out.println("Goodbye !");
                     return;
 
