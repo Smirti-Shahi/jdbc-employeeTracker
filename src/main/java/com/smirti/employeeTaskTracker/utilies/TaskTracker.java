@@ -82,9 +82,12 @@ public class TaskTracker {
                     System.out.println(task.updateTaskStatus(updateId,sta));
                     break;
 
-
-
                 case "6":
+                    System.out.println("Enter id for delete task");
+                    int deleteid = Integer.parseInt(sc.nextLine().trim());
+                    System.out.println(task.deleteTask(deleteid));
+                    break;
+                case "7":
                     System.out.println("Goodbye !");
                     return;
 
